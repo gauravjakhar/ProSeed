@@ -22,6 +22,7 @@ namespace ProceedSolution
         [Then(@"The user should be logged in to the system")]
         public void ThenTheUserShouldBeLoggedInToTheSystem()
         {
+
             if (ProSeedPageFactory.LoginPage.getTitle().Contains("Dashboard"))
             {
                 Console.WriteLine("**************************************************");

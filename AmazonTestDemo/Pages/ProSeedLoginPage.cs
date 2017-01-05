@@ -29,6 +29,9 @@ namespace ProceedSolution
         [FindsBy(How = How.XPath, Using = "//div[contains(text(),'Invalid')]")]
         public IWebElement msgInvalidEmail;
 
+        [FindsBy(How = How.XPath, Using = "//img[contains(class(),'use_another_account')]")]
+        public IWebElement imgAnother;
+
         public ProSeedLoginPage(IWebDriver driver)
         {
             this._driver = driver;
@@ -41,6 +44,10 @@ namespace ProceedSolution
         }
         public void enterUidPassword(String Email, String Password)
         {
+            if (!txtEmail.Displayed)
+            {
+                imgAnother.ClickCustom("Another Account");
+            }
             txtEmail.SendKeysCustom(Email, "Email");
             txtPwd.SendKeysCustom(Password, "Password");
         }

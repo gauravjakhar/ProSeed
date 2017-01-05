@@ -12,16 +12,16 @@ namespace ProceedSolution.Pages
     {   IWebDriver _driver;
 
         [FindsBy(How = How.XPath, Using = "//span[contains(text(), 'Dashboard')]")]
-        public IWebElement TabDashboard;
+        public IWebElement tabDashBoard;
 
         [FindsBy(How = How.XPath, Using = "//a//span[contains(text(),'Batch')]")]
-        public IWebElement TabBatch;
+        public IWebElement tabBatch;
 
         [FindsBy(How = How.XPath, Using = "//a//span[contains(text(),'Trainee')]")]
-        public IWebElement TabTrainee;
+        public IWebElement tabTrainee;
 
         [FindsBy(How = How.XPath, Using = "//*[@id='sidebar']/ul/li[4]")]
-        public IWebElement TabLogOut;
+        public IWebElement tabLogOut;
 
         public ProSeedHomePage(IWebDriver driver)
         {
@@ -36,7 +36,7 @@ namespace ProceedSolution.Pages
 
         public void verifyClickTabs()
         {
-            TabBatch.Click();
+            tabBatch.Click();
             if (getTitle().Contains("Batch list"))
             {
                 Console.WriteLine("**************************************************");
@@ -50,7 +50,7 @@ namespace ProceedSolution.Pages
                 Console.WriteLine("**************************************************");
             }
 
-            TabTrainee.Click();
+            tabTrainee.Click();
 
             if (getTitle().Contains("Trainee List"))
             {
@@ -65,7 +65,7 @@ namespace ProceedSolution.Pages
                 Console.WriteLine("**************************************************");
             }
 
-            TabLogOut.Click();
+            tabLogOut.Click();
             if (getTitle().Contains("Login"))
             {
                 Console.WriteLine("**************************************************");
