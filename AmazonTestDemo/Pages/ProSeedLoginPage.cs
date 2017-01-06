@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using OpenQA.Selenium.Support.UI;
 using ProceedSolution.Temp;
 using ProSeed_Test.Utilities;
 using System;
@@ -29,8 +30,11 @@ namespace ProceedSolution
         [FindsBy(How = How.XPath, Using = "//div[contains(text(),'Invalid')]")]
         public IWebElement msgInvalidEmail;
 
-        [FindsBy(How = How.XPath, Using = "//img[contains(class(),'use_another_account')]")]
-        public IWebElement imgAnother;
+        [FindsBy(How = How.XPath, Using = "//li[contains(@id,'login_user_chooser')]")]
+        public IWebElement storedUser;
+
+        [FindsBy(How = How.XPath, Using = "//table[contains(@id,'use_another_account')]")]
+        public IWebElement useAnother;
 
         public ProSeedLoginPage(IWebDriver driver)
         {
@@ -42,14 +46,17 @@ namespace ProceedSolution
         {
             return _driver.Title;
         }
-        public void enterUidPassword(String Email, String Password)
+        public void EnterUidandPwd(String Email, String Password)
         {
-            if (!txtEmail.Displayed)
+            //WebDriverWait wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(20));
+            //txtEmail = wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//input[contains(@id,'userid_inputtext')]")));
+            if (storedUser.Displayed)
             {
-                imgAnother.ClickCustom("Another Account");
+                useAnother.ClickCustom("Another Account");
             }
             txtEmail.SendKeysCustom(Email, "Email");
             txtPwd.SendKeysCustom(Password, "Password");
+            Thread.Sleep(5000);
         }
 
         public void clickLogin()

@@ -31,7 +31,7 @@ namespace ProceedSolution
         public void quit()
         {
             Thread.Sleep(1000);
-            _driver.Quit();
+            //_driver.Quit();
         }
     }
 }

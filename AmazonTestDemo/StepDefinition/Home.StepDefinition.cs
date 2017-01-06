@@ -13,8 +13,7 @@ namespace ProceedSolution
         [Then(@"The user should be able to see the tabs on the left side")]
         public void ThenTheUserShouldBeAbleToSeeTheTabsOnTheLeftSide()
         {
-            ProSeedPageFactory.HomePage.verifyClickTabs();
-
+            ProSeedPageFactory.HomePage.verifySideBar();
         }
 
     }

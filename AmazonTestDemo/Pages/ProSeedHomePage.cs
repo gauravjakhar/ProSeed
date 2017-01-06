@@ -11,8 +11,8 @@ namespace ProceedSolution.Pages
     public class ProSeedHomePage
     {   IWebDriver _driver;
 
-        [FindsBy(How = How.XPath, Using = "//span[contains(text(), 'Dashboard')]")]
-        public IWebElement tabDashBoard;
+        [FindsBy(How = How.XPath, Using = "//div[@id = 'sidebar')]")]
+        public IWebElement sideBar;
 
         [FindsBy(How = How.XPath, Using = "//a//span[contains(text(),'Batch')]")]
         public IWebElement tabBatch;
@@ -34,62 +34,12 @@ namespace ProceedSolution.Pages
             return _driver.Title;
         }
 
-        public void verifyClickTabs()
+        public void verifySideBar()
         {
-            tabBatch.Click();
-            if (getTitle().Contains("Batch list"))
+            if(sideBar.Enabled)
             {
-                Console.WriteLine("**************************************************");
-                Console.WriteLine("Passed Scenario Batch tab.");
-                Console.WriteLine("**************************************************");
+                Console.Write("SideBar Visible");
             }
-            else
-            {
-                Console.WriteLine("**************************************************");
-                Console.WriteLine("Failed Scenario Batch tab");
-                Console.WriteLine("**************************************************");
-            }
-
-            tabTrainee.Click();
-
-            if (getTitle().Contains("Trainee List"))
-            {
-                Console.WriteLine("**************************************************");
-                Console.WriteLine("Passed Scenario Trainee tab.");
-                Console.WriteLine("**************************************************");
-            }
-            else
-            {
-                Console.WriteLine("**************************************************");
-                Console.WriteLine("Failed Scenario Trainee tab.");
-                Console.WriteLine("**************************************************");
-            }
-
-            tabLogOut.Click();
-            if (getTitle().Contains("Login"))
-            {
-                Console.WriteLine("**************************************************");
-                Console.WriteLine("Passed Scenario Logout tab.");
-                Console.WriteLine("**************************************************");
-            }
-            else
-            {
-                Console.WriteLine("**************************************************");
-                Console.WriteLine("Failed Scenario Logout tab.");
-                Console.WriteLine("**************************************************");
-            }
-
-
-
-
-
-
-        }
-
-
-
-
-
-
+        }        
     }
 }
