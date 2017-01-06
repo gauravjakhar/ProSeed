@@ -16,5 +16,11 @@ namespace ProceedSolution
             ProSeedPageFactory.HomePage.verifySideBar();
         }
 
+        [Given(@"I am on Admin Page")]
+        public void GivenIAmOnAdminPage()
+        {
+            ProSeedPageFactory.HomePage.ClickAdminandVerify();
+        }
+
     }
 }

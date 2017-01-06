@@ -1,9 +1,11 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using ProceedSolution.Temp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace ProceedSolution.Pages
@@ -23,6 +25,12 @@ namespace ProceedSolution.Pages
         [FindsBy(How = How.XPath, Using = "//*[@id='sidebar']/ul/li[4]")]
         public IWebElement tabLogOut;
 
+        [FindsBy(How = How.XPath, Using = "//span[contains(text(),'Admin')]")]
+        public IWebElement tabAdmin;
+
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class,'page-header')]")]
+        public IWebElement header;
+
         public ProSeedHomePage(IWebDriver driver)
         {
             this._driver=driver;
@@ -40,6 +48,16 @@ namespace ProceedSolution.Pages
             {
                 Console.Write("SideBar Visible");
             }
-        }        
+        }  
+        
+        public void ClickAdminandVerify()
+        {
+            tabAdmin.ClickCustom("Admin Tab");
+            Thread.Sleep(1000);
+            if(header.Text.Contains("Admin"))
+            {
+                Console.WriteLine("Admin Page Open");
+            }
+        }      
     }
 }
