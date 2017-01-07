@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
+using OpenQA.Selenium.Support.UI;
 using System.Threading.Tasks;
 
 namespace ProceedSolution.Temp
@@ -26,6 +27,12 @@ namespace ProceedSolution.Temp
         {
             element.Click();
             Console.WriteLine("Click on " + controlname);
+        }
+        public static void SelectCustom(this IWebElement element, string value, string controlname)
+        {
+            SelectElement selector = new SelectElement(element);
+            selector.SelectByValue(value);
+            Console.WriteLine("Selected : " + controlname);
         }
         public static void SwithWindowByTitle(this IWebDriver browser, string title)
         {

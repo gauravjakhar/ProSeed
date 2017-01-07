@@ -126,7 +126,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 27
  testRunner.Then("It should show an alert, click ok", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 28
- testRunner.And("Go to admin Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am on Admin Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 29
  testRunner.And("verify updated trainee", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -256,7 +256,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 27
  testRunner.Then("It should show an alert, click ok", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 28
- testRunner.And("Go to admin Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am on Admin Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 29
  testRunner.And("verify updated trainee", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden

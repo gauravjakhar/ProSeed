@@ -25,5 +25,5 @@ Scenario: Update Trainee
 	Then update Trainee page should appear
 	And I Enter all data changes and click Update
 	Then It should show an alert, click ok
-	And Go to admin Page
+	And I am on Admin Page
 	And verify updated trainee

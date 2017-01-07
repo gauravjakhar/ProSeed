@@ -17,6 +17,7 @@ namespace ProceedSolution
         }
 
         [Given(@"I am on Admin Page")]
+        [Then(@"I am on Admin Page")]
         public void GivenIAmOnAdminPage()
         {
             ProSeedPageFactory.HomePage.ClickAdminandVerify();

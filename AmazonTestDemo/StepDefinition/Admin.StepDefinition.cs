@@ -12,25 +12,25 @@ namespace ProceedSolution
         [When(@"I click Add Member Button")]
         public void WhenIClickAddMemberButton()
         {
-            ScenarioContext.Current.Pending();
+            ProSeedPageFactory.AdminPage.AddMember();
         }
 
         [Then(@"Create Trainee page should appear")]
         public void ThenCreateTraineePageShouldAppear()
         {
-            ScenarioContext.Current.Pending();
+            ProSeedPageFactory.AdminPage.VerifyCreateTrainee();
         }
 
         [Then(@"I Enter all data needed and click Create")]
         public void ThenIEnterAllDataNeededAndClickCreate()
         {
-            ScenarioContext.Current.Pending();
+            ProSeedPageFactory.AdminPage.EnterDataandCreate();
         }
 
         [Then(@"It should navigate to Trainee Page with Trainee recently added appearing")]
         public void ThenItShouldNavigateToTraineePageWithTraineeRecentlyAddedAppearing()
         {
-            ScenarioContext.Current.Pending();
+            ProSeedPageFactory.AdminPage.VerifyAddedTrainee();
         }
 
         [When(@"I click Delete Trainee icon corresponding to a trainee")]
@@ -65,12 +65,6 @@ namespace ProceedSolution
 
         [Then(@"It should show an alert, click ok")]
         public void ThenItShouldShowAnAlertClickOk()
-        {
-            ScenarioContext.Current.Pending();
-        }
-
-        [Then(@"Go to admin Page")]
-        public void ThenGoToAdminPage()
         {
             ScenarioContext.Current.Pending();
         }

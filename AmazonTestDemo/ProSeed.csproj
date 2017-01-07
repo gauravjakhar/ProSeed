@@ -35,6 +35,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="nunit.framework">
       <HintPath>..\packages\NUnit.3.0.0\lib\net45\nunit.framework.dll</HintPath>
     </Reference>
@@ -45,7 +53,11 @@
       <HintPath>..\packages\SpecRun.SpecFlow.1.5.2\lib\net45\SpecRun.SpecFlowPlugin.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.XML" />
     <Reference Include="TechTalk.SpecFlow">
       <HintPath>..\packages\SpecFlow.2.1.0\lib\net45\TechTalk.SpecFlow.dll</HintPath>
@@ -78,6 +90,26 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Data\Automation.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Automation.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Automation.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Automation.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Automation.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Automation.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Data\CommonDataAccess.cs" />
+    <Compile Include="Data\ProSeedDataAccess.cs" />
+    <Compile Include="Data\User.cs">
+      <DependentUpon>Automation.tt</DependentUpon>
+    </Compile>
     <Compile Include="Fetures\Admin.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -109,6 +141,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <EntityDeploy Include="Data\Automation.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Automation.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Data\Automation.edmx.diagram">
+      <DependentUpon>Automation.edmx</DependentUpon>
+    </None>
     <None Include="Default.srprofile">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>
@@ -137,6 +176,21 @@
     </None>
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Content Include="Data\Automation.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Automation.edmx</DependentUpon>
+      <LastGenOutput>Automation.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Data\Automation.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Automation.edmx</DependentUpon>
+      <LastGenOutput>Automation.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
