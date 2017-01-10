@@ -11,14 +11,17 @@ namespace ProceedSolution.Data
 {
     using System;
     using System.Data.Entity;
+    using System.Data.Entity.Core.Objects;
     using System.Data.Entity.Infrastructure;
-    
-    public partial class Entities : DbContext
+
+    public partial class Automation : DbContext
     {
-        public Entities()
-            : base("name=Entities")
+        public Automation()
+            : base("name=Automation")
         {
         }
+
+        protected  DbContext DbConnection ;
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

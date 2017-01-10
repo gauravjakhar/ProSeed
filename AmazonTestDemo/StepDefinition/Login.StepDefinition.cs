@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProceedSolution.Helper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,8 +15,9 @@ namespace ProceedSolution
         [When(@"I login to ProSeed Application")]
         public void GivenILoginToProSeedApplication()
         {
+            string[] xmldata = ExcelHelper.ReturnLoginUser(1);
             ProSeedPageFactory.LoginPage.OpenApplication();
-            ProSeedPageFactory.LoginPage.EnterUidandPwd("g.kumar@prowareness.nl", "Jan@12345");
+            ProSeedPageFactory.LoginPage.EnterUidandPwd("g.kumar@prowareness.nl", "Jan@12345"); //(xmldata[0],xmldata[1]);
             ProSeedPageFactory.LoginPage.clickLogin();            
         }
         
@@ -36,6 +38,13 @@ namespace ProceedSolution
                 Console.WriteLine("Failed Scenario 1: Login With Valid User Email Id.");
                 Console.WriteLine("**************************************************");
             }
+        }
+
+        [Then(@"Validate the role")]
+        [Then(@"Get a message that you are not authorized")]
+        public void ThenGetAMessageThatYouAreNotAuthorized()
+        {
+            ProSeedPageFactory.LoginPage.CheckAuthorization();
         }
 
         //[Given(@"I open ProSeed SignIn Page")]
@@ -66,7 +75,7 @@ namespace ProceedSolution
         //public void ThenICheckToolTipAppearingAsInvalidEmailIDPassword()
         //{
         //    if (ProSeedPageFactory.LoginPage.getInvalidEmailMsg().Contains("Invalid"))
-            
+
         //        {
         //            Console.WriteLine("**************************************************");
         //            Console.WriteLine("Passed Scenario 2: Login With Valid User Email Id.");
@@ -79,7 +88,7 @@ namespace ProceedSolution
         //            Console.WriteLine("**************************************************");
         //        }
         //}
-        
+
 
         //[Given(@"I enter username of wrong format and password")]
         //[When(@"I enter username of wrong format and password")]

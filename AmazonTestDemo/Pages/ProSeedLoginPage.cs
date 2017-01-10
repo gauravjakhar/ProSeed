@@ -64,6 +64,11 @@ namespace ProceedSolution
             btnLogin.ClickCustom("Login");
         }
 
+        public void CheckAuthorization()
+        {
+
+        }
+
         public void OpenApplication()
         {
             IWebDriver driver = _driver;

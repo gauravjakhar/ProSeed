@@ -61,11 +61,11 @@ namespace ProceedSolution.Fetures
             testRunner.CollectScenarioErrors();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Login With Valid User Email Id", new string[] {
+        [TechTalk.SpecRun.ScenarioAttribute("Login With Valid(Role) User Email Id", new string[] {
                 "LoginFeature"}, SourceLine=3)]
-        public virtual void LoginWithValidUserEmailId()
+        public virtual void LoginWithValidRoleUserEmailId()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Login With Valid User Email Id", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Login With Valid(Role) User Email Id", new string[] {
                         "LoginFeature"});
 #line 4
 this.ScenarioSetup(scenarioInfo);
@@ -73,6 +73,26 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.Given("I login to ProSeed Application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 6
  testRunner.Then("The user should be logged in to the system", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 7
+ testRunner.And("Validate the role", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Login With Not Valid User Email Id", new string[] {
+                "LoginFeature"}, SourceLine=10)]
+        public virtual void LoginWithNotValidUserEmailId()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Login With Not Valid User Email Id", new string[] {
+                        "LoginFeature"});
+#line 11
+this.ScenarioSetup(scenarioInfo);
+#line 12
+ testRunner.Given("I login to ProSeed Application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 13
+ testRunner.Then("The user should be logged in to the system", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 14
+ testRunner.And("Get a message that you are not authorized", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -133,11 +153,11 @@ this.ScenarioSetup(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Login With Valid User Email Id")]
+        [NUnit.Framework.DescriptionAttribute("Login With Valid(Role) User Email Id")]
         [NUnit.Framework.CategoryAttribute("LoginFeature")]
-        public virtual void LoginWithValidUserEmailId()
+        public virtual void LoginWithValidRoleUserEmailId()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Login With Valid User Email Id", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Login With Valid(Role) User Email Id", new string[] {
                         "LoginFeature"});
 #line 4
 this.ScenarioSetup(scenarioInfo);
@@ -145,6 +165,27 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.Given("I login to ProSeed Application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 6
  testRunner.Then("The user should be logged in to the system", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 7
+ testRunner.And("Validate the role", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Login With Not Valid User Email Id")]
+        [NUnit.Framework.CategoryAttribute("LoginFeature")]
+        public virtual void LoginWithNotValidUserEmailId()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Login With Not Valid User Email Id", new string[] {
+                        "LoginFeature"});
+#line 11
+this.ScenarioSetup(scenarioInfo);
+#line 12
+ testRunner.Given("I login to ProSeed Application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 13
+ testRunner.Then("The user should be logged in to the system", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 14
+ testRunner.And("Get a message that you are not authorized", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

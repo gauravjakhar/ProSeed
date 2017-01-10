@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using ProceedSolution.Data;
 using ProceedSolution.Temp;
 using System;
 using System.Collections.Generic;

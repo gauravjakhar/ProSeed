@@ -105,8 +105,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Automation.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Data\CommonDataAccess.cs" />
-    <Compile Include="Data\ProSeedDataAccess.cs" />
     <Compile Include="Data\User.cs">
       <DependentUpon>Automation.tt</DependentUpon>
     </Compile>
@@ -120,6 +118,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Helper\ExcelHelper.cs" />
     <Compile Include="Helper\Xmll.cs" />
     <Compile Include="Pages\ProSeedAdminPage.cs" />
     <Compile Include="Pages\ProSeedHomePage.cs" />
