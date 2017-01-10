@@ -21,19 +21,12 @@ namespace ProSeed_Test.Utilities
             URL = xmldata[0];
             string browser = xmldata[1];
             IWebDriver driver;
-            if (browser.ToLower().Equals("chrome"))
-            {
-                //ChromeOptions options = new ChromeOptions();
-                //options.AddArgument("–disable - extensions");
-                driver = new ChromeDriver(@"C:\Jakhar\ProSeed Test Framework\ProSeed Test\ProSeed Test\Drivers\");
-            }
-            else
-                if (browser.ToLower().Equals("ie"))
+            if (browser.ToLower().Equals("ie"))
             {
                 DesiredCapabilities capabilities = DesiredCapabilities.InternetExplorer();
                 capabilities.SetCapability(CapabilityType.AcceptSslCertificates, true);
-                capabilities.SetCapability(CapabilityType.HasNativeEvents, false);                
-                driver = new InternetExplorerDriver(@"C:\Jakhar\ProSeed Test Framework\ProSeed Test\ProSeed Test\Drivers\");
+                capabilities.SetCapability(CapabilityType.HasNativeEvents, false);
+                driver = new InternetExplorerDriver(@"C:\Testing\Drivers\");
             }
             else
             {
