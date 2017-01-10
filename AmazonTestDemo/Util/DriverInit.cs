@@ -30,7 +30,8 @@ namespace ProSeed_Test.Utilities
             }
             else
             {
-                driver = new FirefoxDriver();
+                FirefoxDriverService service = FirefoxDriverService.CreateDefaultService(@"C:\Testing\Drivers");
+                driver = new FirefoxDriver(service);
             }
             return driver;
         }
