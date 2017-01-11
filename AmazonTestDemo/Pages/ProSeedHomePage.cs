@@ -31,6 +31,9 @@ namespace ProceedSolution.Pages
         [FindsBy(How = How.XPath, Using = "//div[contains(@class,'page-header')]")]
         public IWebElement header;
 
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class,'text-right')]/span")]
+        public IWebElement userRole;
+
         public ProSeedHomePage(IWebDriver driver)
         {
             this._driver=driver;
@@ -48,12 +51,19 @@ namespace ProceedSolution.Pages
             {
                 Console.Write("SideBar Visible");
             }
-        }  
-        
+        }
+
+        public void CheckAuthorization()
+        {
+            if (userRole.Enabled)
+                Console.WriteLine("Logged in User is - " + userRole.Text);
+            else
+                Console.WriteLine("Not Authorized User");            
+        }
         public void ClickAdminandVerify()
         {
             tabAdmin.ClickCustom("Admin Tab");
-            Thread.Sleep(1000);
+            Thread.Sleep(1000);           
             if(header.Text.Contains("Admin"))
             {
                 Console.WriteLine("Admin Page Open");

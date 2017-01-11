@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading;
 using OpenQA.Selenium.Support.UI;
 using System.Threading.Tasks;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace ProceedSolution.Temp
 {

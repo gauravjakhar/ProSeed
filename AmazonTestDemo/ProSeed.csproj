@@ -90,24 +90,6 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Data\Automation.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Automation.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\Automation.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Automation.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\Automation.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Automation.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Data\User.cs">
-      <DependentUpon>Automation.tt</DependentUpon>
-    </Compile>
     <Compile Include="Fetures\Admin.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -135,18 +117,10 @@
     <Compile Include="StepDefinition\Home.StepDefinition.cs" />
     <Compile Include="StepDefinition\Login.StepDefinition.cs" />
     <Compile Include="Temp\CustomMethodsSelenium.cs" />
-    <Compile Include="Temp\TempClass.cs" />
     <Compile Include="Util\DriverInit.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="Data\Automation.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Automation.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="Data\Automation.edmx.diagram">
-      <DependentUpon>Automation.edmx</DependentUpon>
-    </None>
     <None Include="Default.srprofile">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>
@@ -175,18 +149,6 @@
     </None>
   </ItemGroup>
   <ItemGroup />
-  <ItemGroup>
-    <Content Include="Data\Automation.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Automation.edmx</DependentUpon>
-      <LastGenOutput>Automation.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Data\Automation.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Automation.edmx</DependentUpon>
-      <LastGenOutput>Automation.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>

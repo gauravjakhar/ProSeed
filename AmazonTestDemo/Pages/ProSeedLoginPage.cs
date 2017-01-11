@@ -35,7 +35,7 @@ namespace ProceedSolution
 
         [FindsBy(How = How.XPath, Using = "//table[contains(@id,'use_another_account')]")]
         public IWebElement useAnother;
-
+        
         public ProSeedLoginPage(IWebDriver driver)
         {
             this._driver = driver;
@@ -48,8 +48,7 @@ namespace ProceedSolution
         }
         public void EnterUidandPwd(String Email, String Password)
         {
-            //WebDriverWait wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(20));
-            //txtEmail = wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//input[contains(@id,'userid_inputtext')]")));
+            //WebDriverWait wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(20));           
             if (storedUser.Displayed)
             {
                 useAnother.ClickCustom("Another Account");
@@ -64,11 +63,6 @@ namespace ProceedSolution
             btnLogin.ClickCustom("Login");
         }
 
-        public void CheckAuthorization()
-        {
-
-        }
-
         public void OpenApplication()
         {
             IWebDriver driver = _driver;
@@ -81,10 +75,5 @@ namespace ProceedSolution
         {
             return msgInvalidEmail.Text;
         }
-
     }
-
-
-
-
 }

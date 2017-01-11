@@ -25,13 +25,12 @@ namespace ProceedSolution
             _driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
              ProSeedPageFactory = new PageFactories(_driver);
         }
-       
-        
+               
         [AfterScenario]
         public void quit()
         {
             Thread.Sleep(1000);
             //_driver.Quit();
-        }
+        }        
     }
 }

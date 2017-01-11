@@ -40,12 +40,6 @@ namespace ProceedSolution
             }
         }
 
-        [Then(@"Validate the role")]
-        [Then(@"Get a message that you are not authorized")]
-        public void ThenGetAMessageThatYouAreNotAuthorized()
-        {
-            ProSeedPageFactory.LoginPage.CheckAuthorization();
-        }
 
         //[Given(@"I open ProSeed SignIn Page")]
         //[When(@"I open ProSeed SignIn Page")]

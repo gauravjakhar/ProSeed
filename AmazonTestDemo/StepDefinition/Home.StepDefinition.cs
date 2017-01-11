@@ -23,5 +23,11 @@ namespace ProceedSolution
             ProSeedPageFactory.HomePage.ClickAdminandVerify();
         }
 
+        [Then(@"Validate the role")]
+        [Then(@"Get a message that you are not authorized")]
+        public void ThenGetAMessageThatYouAreNotAuthorized()
+        {
+            ProSeedPageFactory.HomePage.CheckAuthorization();
+        }
     }
 }
