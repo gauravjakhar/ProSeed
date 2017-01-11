@@ -14,13 +14,8 @@ namespace ProceedSolution.Util
         {
             string path = @"C:\Testing\Output\Test.txt";
             FileStream fs = new FileStream(path, FileMode.Create);
-            // First, save the standard output.
-            //TextWriter tmp = Console.Out;
             sw = new StreamWriter(fs);
             Console.SetOut(sw);
-            Console.WriteLine("Hello file");
-            Console.WriteLine("Hello World");
-            //Console.SetOut(tmp);
         }
         public static void WriteToFileEnd()
         {
