@@ -26,6 +26,8 @@ namespace ProceedSolution
             _driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
              ProSeedPageFactory = new PageFactories(_driver);
             LogFiles.WriteToFileStart();
+            string testFullName = NUnit.Framework.TestContext.CurrentContext.Test.FullName;
+            Console.WriteLine("Starting Test --------- " + testFullName);
         }
         
                
