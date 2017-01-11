@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
+using ProceedSolution.Util;
 using ProSeed_Test.Utilities;
 using System;
 using System.Collections.Generic;
@@ -24,12 +25,15 @@ namespace ProceedSolution
             _driver.Manage().Window.Maximize();
             _driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
              ProSeedPageFactory = new PageFactories(_driver);
+            LogFiles.WriteToFileStart();
         }
+        
                
         [AfterScenario]
         public void quit()
         {
             Thread.Sleep(1000);
+            LogFiles.WriteToFileEnd();
             //_driver.Quit();
         }        
     }
