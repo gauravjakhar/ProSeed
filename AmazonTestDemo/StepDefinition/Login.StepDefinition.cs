@@ -26,19 +26,24 @@ namespace ProceedSolution
         [Then(@"The user should be logged in to the system")]
         public void ThenTheUserShouldBeLoggedInToTheSystem()
         {
-
-            if (ProSeedPageFactory.LoginPage.getTitle().Contains("Home"))
-            {
-                Console.WriteLine("**************************************************");
-                Console.WriteLine("Passed Scenario 1: Login With Valid User Email Id.");
-                Console.WriteLine("**************************************************");
-            }
+            bool log = false;
+            log = ProSeedPageFactory.HomePage.CheckLoggedIn();
+            if (log)
+                Console.WriteLine("Logged in Successfully");
             else
-            {
-                Console.WriteLine("**************************************************");
-                Console.WriteLine("Failed Scenario 1: Login With Valid User Email Id.");
-                Console.WriteLine("**************************************************");
-            }
+                Console.WriteLine("Not Logged in Successfully");
+            //if (ProSeedPageFactory.LoginPage.getTitle().Contains("Home"))
+            //{
+            //    Console.WriteLine("**************************************************");
+            //    Console.WriteLine("Passed Scenario 1: Login With Valid User Email Id.");
+            //    Console.WriteLine("**************************************************");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("**************************************************");
+            //    Console.WriteLine("Failed Scenario 1: Login With Valid User Email Id.");
+            //    Console.WriteLine("**************************************************");
+            //}
         }
 
 

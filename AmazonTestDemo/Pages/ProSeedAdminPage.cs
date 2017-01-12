@@ -14,16 +14,16 @@ namespace ProceedSolution.Pages
     {
         IWebDriver _driver;
 
-        [FindsBy(How = How.XPath, Using = "//a[contains(text(),'Add Member')]")]
+        [FindsBy(How = How.XPath, Using = "//a[contains(text(),'Add User')]")]
         public IWebElement btnAdd;
 
         [FindsBy(How = How.XPath, Using = "//a[contains(text(),'')]")]
         public IWebElement btnDelete;
 
-        [FindsBy(How = How.XPath, Using = "//a[contains(text(),'')]")]
+        [FindsBy(How = How.XPath, Using = "//*[@id='main - container']/div[2]/div/div/div[2]/div/div/table[2]/tbody/tr[1]/td[7]/a[1]")]
         public IWebElement btnUpdate;
 
-        [FindsBy(How = How.XPath, Using = "//div[contains(@class,'page-header')]")]
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class,'page-header')]/h1")]
         public IWebElement header;
 
         [FindsBy(How = How.XPath, Using = "//span[contains(@id,'BatchID')]")]
@@ -41,8 +41,14 @@ namespace ProceedSolution.Pages
         [FindsBy(How = How.XPath, Using = "//input[contains(@id,'Phone')]")]
         public IWebElement txtPhone;
 
+        [FindsBy(How = How.XPath, Using = "//input[contains(@id,'RoleSelection')]")]
+        public IWebElement ddlRole;        
+
         [FindsBy(How = How.XPath, Using = "//input[contains(value(),'Create')]")]
         public IWebElement btnCreate;
+
+        [FindsBy(How = How.XPath, Using = "//input[contains(value(),'Update')]")]
+        public IWebElement btnUpdateUser;
 
         [FindsBy(How = How.XPath, Using = "//table[contains(@class,'table-striped')]/tbody/tr")]
         public IList <IWebElement> allRows;
@@ -67,12 +73,24 @@ namespace ProceedSolution.Pages
         }
         public void EnterDataandCreate()
         {
-            ddlBatch.SelectCustom("Minions", "Batch");
+            ddlBatch.SelectCustom("5 idiots", "Batch");
             txtEmpId.SendKeysCustom("12345", "Empid");
             txtName.SendKeysCustom("Test", "Name");
             txtEmail.SendKeysCustom("Email@Email.com", "Email");
             txtPhone.SendKeysCustom("9654885678", "Phone");
             btnCreate.ClickCustom("Create");
+        }
+        public void EnterDataandRole()
+        {
+            txtPhone.SendKeysCustom("1234567890", "Phone");
+            btnUpdateUser.SelectCustom("Admin", "Role");
+        }
+        public void ClickAlertOK()
+        {
+            string windowhandle = _driver.CurrentWindowHandle;
+            IAlert a = _driver.SwitchTo().Alert();
+            a.Accept();
+            _driver.SwitchTo().Window(windowhandle);
         }
         public void VerifyAddedTrainee()
         {
@@ -95,6 +113,10 @@ namespace ProceedSolution.Pages
             }
             if(!found)
                 Console.WriteLine("Not Added");
+        }
+        public void ClickUpdate()
+        {
+            btnUpdate.ClickCustom("Update button");
         }
     }
 }

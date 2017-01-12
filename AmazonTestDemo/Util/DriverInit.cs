@@ -17,7 +17,7 @@ namespace ProSeed_Test.Utilities
         public static string URL;
         public static IWebDriver Init()
         {
-            string[] xmldata = Xmll.ReadXML();
+            string[] xmldata = Xmll.PickBrowserAndURLFromXmlFile();
             URL = xmldata[0];
             string browser = xmldata[1];
             IWebDriver driver;

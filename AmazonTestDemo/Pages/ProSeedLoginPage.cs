@@ -21,6 +21,8 @@ namespace ProceedSolution
         [FindsBy(How = How.XPath, Using = "//input[contains(@id,'userid_inputtext')]")]
         public IWebElement txtEmail;
 
+        //http://g.kumar:Jan@12345@172.20.1.116
+
         [FindsBy(How = How.XPath, Using = "//input[contains(@id,'password_inputtext')]")]
         public IWebElement txtPwd;
 

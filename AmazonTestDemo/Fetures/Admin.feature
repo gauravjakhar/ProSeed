@@ -9,14 +9,6 @@ Scenario: Add Trainee
 	And I Enter all data needed and click Create
 	Then It should navigate to Trainee Page with Trainee recently added appearing
 
-
-	@AdminTest
-Scenario: Delete Trainee
-	Given I login to ProSeed Application
-	And I am on Admin Page
-	When I click Delete Trainee icon corresponding to a trainee
-	Then corresponding Trainee should be removed
-
 	@AdminTest
 Scenario: Update Trainee
 	Given I login to ProSeed Application
@@ -26,4 +18,3 @@ Scenario: Update Trainee
 	And I Enter all data changes and click Update
 	Then It should show an alert, click ok
 	And I am on Admin Page
-	And verify updated trainee

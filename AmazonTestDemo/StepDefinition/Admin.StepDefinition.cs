@@ -33,47 +33,28 @@ namespace ProceedSolution
             ProSeedPageFactory.AdminPage.VerifyAddedTrainee();
         }
 
-        [When(@"I click Delete Trainee icon corresponding to a trainee")]
-        public void WhenIClickDeleteTraineeIconCorrespondingToATrainee()
-        {
-            ScenarioContext.Current.Pending();
-        }
-
-        [Then(@"corresponding Trainee should be removed")]
-        public void ThenCorrespondingTraineeShouldBeRemoved()
-        {
-            ScenarioContext.Current.Pending();
-        }
-
         [When(@"I click Update Trainee icon corresponding to a trainee")]
         public void WhenIClickUpdateTraineeIconCorrespondingToATrainee()
         {
-            ScenarioContext.Current.Pending();
+            ProSeedPageFactory.AdminPage.ClickUpdate();
         }
 
         [Then(@"update Trainee page should appear")]
         public void ThenUpdateTraineePageShouldAppear()
         {
-            ScenarioContext.Current.Pending();
+            ProSeedPageFactory.HomePage.CheckTabName("Edit Inductee");
         }
 
         [Then(@"I Enter all data changes and click Update")]
         public void ThenIEnterAllDataChangesAndClickUpdate()
         {
-            ScenarioContext.Current.Pending();
+            ProSeedPageFactory.AdminPage.EnterDataandRole();
         }
 
         [Then(@"It should show an alert, click ok")]
         public void ThenItShouldShowAnAlertClickOk()
         {
-            ScenarioContext.Current.Pending();
+            ProSeedPageFactory.AdminPage.ClickAlertOK();
         }
-
-        [Then(@"verify updated trainee")]
-        public void ThenVerifyUpdatedTrainee()
-        {
-            ScenarioContext.Current.Pending();
-        }
-
     }
 }

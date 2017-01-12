@@ -34,6 +34,9 @@ namespace ProceedSolution.Pages
         [FindsBy(How = How.XPath, Using = "//div[contains(@class,'text-right')]/span")]
         public IWebElement userRole;
 
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class,'text-right')]/span[2]/a")]
+        public IWebElement lnkLogOut;
+
         public ProSeedHomePage(IWebDriver driver)
         {
             this._driver=driver;
@@ -60,6 +63,15 @@ namespace ProceedSolution.Pages
             else
                 Console.WriteLine("Not Authorized User");            
         }
+
+        public bool CheckLoggedIn()
+        {
+            if (lnkLogOut.Text.Contains("out"))
+                return true;
+            else
+                return false;
+        }
+
         public void ClickAdminandVerify()
         {
             tabAdmin.ClickCustom("Admin Tab");
@@ -68,6 +80,13 @@ namespace ProceedSolution.Pages
             {
                 Console.WriteLine("Admin Page Open");
             }
-        }      
+        }
+        public void CheckTabName(string tabname)
+        {
+            if (header.Text.Contains(tabname))
+            {
+                Console.WriteLine(tabname + "Page Open");
+            }
+        }
     }
 }

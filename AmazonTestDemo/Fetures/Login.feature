@@ -3,8 +3,8 @@
 @LoginFeature
 Scenario: Login With Valid(Role) User Email Id
 	Given I login to ProSeed Application
-	#Then The user should be logged in to the system
-	#And Validate the role
+	Then The user should be logged in to the system
+	And Validate the role
 
 
 	@LoginFeature

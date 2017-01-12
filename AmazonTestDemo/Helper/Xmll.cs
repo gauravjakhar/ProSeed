@@ -11,7 +11,7 @@ namespace ProSeed_Test.Data_Handling
 {
     public class Xmll
     {
-        public static string[] ReadXML()
+        public static string[] PickBrowserAndURLFromXmlFile()
         {
             try
             {
@@ -37,6 +37,6 @@ namespace ProSeed_Test.Data_Handling
             {
                 return null;
             }
-        }
+        }        
     }
 }
