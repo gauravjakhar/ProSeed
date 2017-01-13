@@ -79,24 +79,6 @@ this.ScenarioSetup(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Login With Not Valid User Email Id", new string[] {
-                "LoginFeature"}, SourceLine=10)]
-        public virtual void LoginWithNotValidUserEmailId()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Login With Not Valid User Email Id", new string[] {
-                        "LoginFeature"});
-#line 11
-this.ScenarioSetup(scenarioInfo);
-#line 12
- testRunner.Given("I login to ProSeed Application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 13
- testRunner.Then("The user should be logged in to the system", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 14
- testRunner.And("Get a message that you are not authorized", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
         [TechTalk.SpecRun.TestRunCleanup()]
         public virtual void TestRunCleanup()
         {
@@ -167,25 +149,6 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.Then("The user should be logged in to the system", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 7
  testRunner.And("Validate the role", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Login With Not Valid User Email Id")]
-        [NUnit.Framework.CategoryAttribute("LoginFeature")]
-        public virtual void LoginWithNotValidUserEmailId()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Login With Not Valid User Email Id", new string[] {
-                        "LoginFeature"});
-#line 11
-this.ScenarioSetup(scenarioInfo);
-#line 12
- testRunner.Given("I login to ProSeed Application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 13
- testRunner.Then("The user should be logged in to the system", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 14
- testRunner.And("Get a message that you are not authorized", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

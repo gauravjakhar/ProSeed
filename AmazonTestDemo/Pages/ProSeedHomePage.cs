@@ -13,7 +13,7 @@ namespace ProceedSolution.Pages
     public class ProSeedHomePage
     {   IWebDriver _driver;
 
-        [FindsBy(How = How.XPath, Using = "//div[@id = 'sidebar')]")]
+        [FindsBy(How = How.XPath, Using = "//div[@id = 'sidebar']")]
         public IWebElement sideBar;
 
         [FindsBy(How = How.XPath, Using = "//a//span[contains(text(),'Batch')]")]
@@ -66,7 +66,7 @@ namespace ProceedSolution.Pages
 
         public bool CheckLoggedIn()
         {
-            if (lnkLogOut.Text.Contains("out"))
+            if (_driver.Title.Contains("Dash"))
                 return true;
             else
                 return false;

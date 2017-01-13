@@ -36,7 +36,7 @@ namespace ProceedSolution
         {
             Thread.Sleep(1000);
             LogFiles.WriteToFileEnd();
-            //_driver.Quit();
+            _driver.Quit();
         }        
     }
 }

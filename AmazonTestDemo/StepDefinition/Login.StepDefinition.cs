@@ -16,10 +16,10 @@ namespace ProceedSolution
         [When(@"I login to ProSeed Application")]
         public void GivenILoginToProSeedApplication()
         {            
-            string[] xmldata = ExcelHelper.ReturnLoginUser(1);
+            //string[] xmldata = ExcelHelper.ReturnLoginUser(1);
             ProSeedPageFactory.LoginPage.OpenApplication();
-            ProSeedPageFactory.LoginPage.EnterUidandPwd("g.kumar@prowareness.nl", "Jan@12345"); //(xmldata[0],xmldata[1]);
-            ProSeedPageFactory.LoginPage.clickLogin();            
+            //ProSeedPageFactory.LoginPage.EnterUidandPwd("g.kumar@prowareness.nl", "Jan@12345"); //(xmldata[0],xmldata[1]);
+            //ProSeedPageFactory.LoginPage.clickLogin();            
         }
         
         [When(@"The user should be logged in to the system")]
