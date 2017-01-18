@@ -2,6 +2,7 @@
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
 using ProceedSolution.Temp;
+using ProceedSolution.Util;
 using ProSeed_Test.Utilities;
 using System;
 using System.Collections.Generic;
@@ -69,6 +70,7 @@ namespace ProceedSolution
         {
             IWebDriver driver = _driver;
             _driver.Navigate().GoToUrl(DriverInit.URL);
+            LogFiles.WriteLineInFile("URL Open", "pass");
             Thread.Sleep(2000);
             //_driver.SwithWindowByTitle("Sign");
         }

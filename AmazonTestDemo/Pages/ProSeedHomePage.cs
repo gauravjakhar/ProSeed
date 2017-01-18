@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using ProceedSolution.Temp;
+using ProceedSolution.Util;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,8 @@ using System.Threading.Tasks;
 namespace ProceedSolution.Pages
 {
     public class ProSeedHomePage
-    {   IWebDriver _driver;
+    {
+        IWebDriver _driver;
 
         [FindsBy(How = How.XPath, Using = "//div[@id = 'sidebar']")]
         public IWebElement sideBar;
@@ -39,8 +41,8 @@ namespace ProceedSolution.Pages
 
         public ProSeedHomePage(IWebDriver driver)
         {
-            this._driver=driver;
-            PageFactory.InitElements(driver,this);
+            this._driver = driver;
+            PageFactory.InitElements(driver, this);
         }
 
         public String getTitle()
@@ -50,7 +52,7 @@ namespace ProceedSolution.Pages
 
         public void verifySideBar()
         {
-            if(sideBar.Enabled)
+            if (sideBar.Enabled)
             {
                 Console.Write("SideBar Visible");
             }
@@ -59,9 +61,9 @@ namespace ProceedSolution.Pages
         public void CheckAuthorization()
         {
             if (userRole.Enabled)
-                Console.WriteLine("Logged in User is - " + userRole.Text);
+                LogFiles.WriteLineInFile("Logged in User is - " + userRole.Text, "pass");
             else
-                Console.WriteLine("Not Authorized User");            
+                LogFiles.WriteLineInFile("Not Authorized User", "fail");
         }
 
         public bool CheckLoggedIn()
@@ -75,8 +77,8 @@ namespace ProceedSolution.Pages
         public void ClickAdminandVerify()
         {
             tabAdmin.ClickCustom("Admin Tab");
-            Thread.Sleep(1000);           
-            if(header.Text.Contains("Admin"))
+            Thread.Sleep(1000);
+            if (header.Text.Contains("Admin"))
             {
                 Console.WriteLine("Admin Page Open");
             }

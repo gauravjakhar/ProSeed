@@ -29,9 +29,9 @@ namespace ProceedSolution
             bool log = false;
             log = ProSeedPageFactory.HomePage.CheckLoggedIn();
             if (log)
-                Console.WriteLine("Logged in Successfully");
+                LogFiles.WriteLineInFile("Logged in", "pass");
             else
-                Console.WriteLine("Not Logged in Successfully");
+                LogFiles.WriteLineInFile("Not Logged in", "fail");
             //if (ProSeedPageFactory.LoginPage.getTitle().Contains("Home"))
             //{
             //    Console.WriteLine("**************************************************");

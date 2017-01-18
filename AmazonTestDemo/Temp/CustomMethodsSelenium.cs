@@ -7,6 +7,7 @@ using System.Threading;
 using OpenQA.Selenium.Support.UI;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using ProceedSolution.Util;
 
 namespace ProceedSolution.Temp
 {
@@ -17,23 +18,23 @@ namespace ProceedSolution.Temp
             element.SendKeys(text);
             if (element.GetAttribute("value").Equals(text))
             {
-                Console.WriteLine("PASS typing - " + text + " in " + controlname +" textbox");
+                LogFiles.WriteLineInFile("Typing - " + text + " in " + controlname + " textbox", "pass");
             }
             else
             {
-                Console.WriteLine("FAIL typing - " + text + " in " + controlname + " textbox");
+                LogFiles.WriteLineInFile("Typing - " + text + " in " + controlname + " textbox", "fail");                
             }
         }
         public static void ClickCustom(this IWebElement element, string controlname)
         {
             element.Click();
-            Console.WriteLine("Click on " + controlname);
+            LogFiles.WriteLineInFile("Click on " + controlname, "info");
         }
         public static void SelectCustom(this IWebElement element, string value, string controlname)
         {
             SelectElement selector = new SelectElement(element);
             selector.SelectByValue(value);
-            Console.WriteLine("Selected : " + controlname);
+            LogFiles.WriteLineInFile("Selected : " + controlname, "info");
         }
         public static void SwithWindowByTitle(this IWebDriver browser, string title)
         {
@@ -43,12 +44,12 @@ namespace ProceedSolution.Temp
                 Thread.Sleep(1000);
                 if(browser.Title.Contains(title))
                 {
-                    Console.WriteLine("PASS - Successfully switched to window with title " +browser.Title);
+                    LogFiles.WriteLineInFile("Successfully switched to window with title " + browser.Title, "pass");
                     break;
                 }
                 else
                 {
-                    Console.WriteLine("INFO - No window with title " + browser.Title +" found, retrying " + i.ToString() + " time if anymore available");
+                    LogFiles.WriteLineInFile("No window with title " + browser.Title + " found, retrying " + i.ToString() + " time if anymore available", "info");                    
                     browser.SwitchTo().Window(windowhandles[i]);
                     continue;
                 }
