@@ -28,25 +28,21 @@ namespace ProceedSolution.Util
         public static void WriteLineInFile(string message, string status)
         {
             Console.WriteLine("<p>");
-            if (status.ToLower().Equals("fail"))
+            switch(status.ToLower())
             {
-                Console.WriteLine("<img src='C:\\Testing\\icon\\fail.png'/>");
-            }
-            else
-                if (status.ToLower().Equals("pass"))
-            {
-                Console.WriteLine("<img src='C:\\Testing\\icon\\pass.png'/>");
-            }
-            else
-                if(status.ToLower().Equals("warning"))
-            {
-                Console.WriteLine("<img src='C:\\Testing\\icon\\warn.png'/>");
-            }
-            else
-                if (status.ToLower().Equals("info"))
-            {
-                Console.WriteLine("<img src='C:\\Testing\\icon\\info.png'/>");
-            }
+                case "fail":
+                    Console.WriteLine("<img src='C:\\Testing\\icon\\fail.png'/>");
+                    break;
+                case "pass":
+                    Console.WriteLine("<img src='C:\\Testing\\icon\\pass.png'/>");
+                    break;
+                case "warning":
+                    Console.WriteLine("<img src='C:\\Testing\\icon\\warn.png'/>");
+                    break;
+                case "info":
+                    Console.WriteLine("<img src='C:\\Testing\\icon\\info.png'/>");
+                    break;
+            }     
             Console.WriteLine(message);
             Console.WriteLine("</p>");
         }

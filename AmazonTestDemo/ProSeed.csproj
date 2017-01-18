@@ -149,7 +149,12 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Util\Icon\fail.png" />
+    <Content Include="Util\Icon\info.png" />
+    <Content Include="Util\Icon\pass.png" />
+    <Content Include="Util\Icon\warn.png" />
+  </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
