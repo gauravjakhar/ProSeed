@@ -118,7 +118,7 @@
     <Compile Include="StepDefinition\Login.StepDefinition.cs" />
     <Compile Include="Temp\CustomMethodsSelenium.cs" />
     <Compile Include="Util\DriverInit.cs" />
-    <Compile Include="Util\LogFiles.cs" />
+    <Compile Include="Util\Logger.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

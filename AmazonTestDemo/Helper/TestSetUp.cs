@@ -25,15 +25,14 @@ namespace ProceedSolution
             _driver.Manage().Window.Maximize();
             _driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
              ProSeedPageFactory = new PageFactories(_driver);
-            LogFiles.WriteToFileStart();
-        }
-        
+            Logger.WriteToFileStart();
+        }        
                
         [AfterScenario]
         public void quit()
         {
             Thread.Sleep(1000);
-            LogFiles.WriteToFileEnd();
+            Logger.WriteToFileEnd();
             _driver.Quit();
         }        
     }

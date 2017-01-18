@@ -70,7 +70,7 @@ namespace ProceedSolution
         {
             IWebDriver driver = _driver;
             _driver.Navigate().GoToUrl(DriverInit.URL);
-            LogFiles.WriteLineInFile("URL Open", "pass");
+            Logger.WriteLineInFile("URL Open", "pass");
             Thread.Sleep(2000);
             //_driver.SwithWindowByTitle("Sign");
         }

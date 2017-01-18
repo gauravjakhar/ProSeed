@@ -61,9 +61,9 @@ namespace ProceedSolution.Pages
         public void CheckAuthorization()
         {
             if (userRole.Enabled)
-                LogFiles.WriteLineInFile("Logged in User is - " + userRole.Text, "pass");
+                Logger.WriteLineInFile("Logged in User is - " + userRole.Text, "pass");
             else
-                LogFiles.WriteLineInFile("Not Authorized User", "fail");
+                Logger.WriteLineInFile("Not Authorized User", "fail");
         }
 
         public bool CheckLoggedIn()

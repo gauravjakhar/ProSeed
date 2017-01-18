@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProceedSolution.Util
 {
-    public class LogFiles
+    public class Logger
     {
         public static StreamWriter sw;
         public static void WriteToFileStart()
