@@ -1,18 +1,10 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Firefox;
-using ProceedSolution.Util;
-using ProSeed_Test.Utilities;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using TechTalk.SpecFlow;
 
 namespace ProceedSolution
-{
-    
+{    
     public partial class StepDefinition
     {
         public PageFactories ProSeedPageFactory;

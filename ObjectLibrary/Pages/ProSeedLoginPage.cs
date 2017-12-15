@@ -1,18 +1,12 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
-using OpenQA.Selenium.Support.UI;
-using ProceedSolution.Temp;
-using ProceedSolution.Util;
-using ProSeed_Test.Utilities;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
+using CustomizedExtendedMethods;
 using TechTalk.SpecFlow;
+using WebdriverAndLogging;
 
-namespace ProceedSolution
+namespace ObjectLibrary.Pages
 {
     [Binding]
     public class ProSeedLoginPage

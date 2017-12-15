@@ -1,13 +1,8 @@
-﻿using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml;
 
-namespace ProSeed_Test.Data_Handling
+namespace WebdriverAndLogging
 {
     public class Xmll
     {
@@ -33,7 +28,7 @@ namespace ProSeed_Test.Data_Handling
                 }
                 return xmldata;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return null;
             }

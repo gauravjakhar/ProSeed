@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.OleDb;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace ProceedSolution.Helper
+namespace WebdriverAndLogging
 {
     public class ExcelHelper
     {
@@ -36,7 +32,7 @@ namespace ProceedSolution.Helper
                     }
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return null;
             }

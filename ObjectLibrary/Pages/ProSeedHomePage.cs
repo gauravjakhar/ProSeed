@@ -1,15 +1,10 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
-using ProceedSolution.Temp;
-using ProceedSolution.Util;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
+using ProceedSolution.Util;
 
-namespace ProceedSolution.Pages
+namespace ObjectLibrary.Pages
 {
     public class ProSeedHomePage
     {
